@@ -3,14 +3,23 @@ macros["playSound"] = {
     var soundFile, audioElement;
 
     soundFile = eval(parser.fullArgs()).toString();
-    audioElement = document.createElement('audio');
 
-    audioElement.setAttribute('id', 'audio');
-    audioElement.setAttribute('src', soundFile);
-    audioElement.volume = 1;
+    if(document.querySelectorAll("audio[src='"+soundFile+"']")[0]) {
+      audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
+    } else {
+      audioElement = document.createElement('audio');
+      audioElement.setAttribute('class', 'audio');
+      audioElement.setAttribute('src', soundFile);
 
-    document.body.appendChild(audioElement);
-    document.getElementById('audio').play();
+      /*
+       * HERE IS WHERE YOU CAN ADJUST THE STARTING VOLUME
+       */
+      audioElement.volume = 1;
+
+      document.body.appendChild(audioElement);
+    }
+
+    audioElement.play();
   }
 }
 
@@ -23,9 +32,14 @@ macros["loopSound"] = {
       audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
     } else {
       audioElement = document.createElement('audio');
-      audioElement.setAttribute('id', 'audio');
+      audioElement.setAttribute('class', 'audio');
       audioElement.setAttribute('src', soundFile);
+
+      /*
+       * HERE IS WHERE YOU CAN ADJUST THE STARTING VOLUME
+       */
       audioElement.volume = 1;
+
       document.body.appendChild(audioElement);
     }
 
