@@ -21,7 +21,7 @@ Cool! Here are some quick steps to take for getting this going in your Twine gam
 5. Dance to your cool new music!
 
 ## Documentation
-You can call any of the macros
+You can call any of the macros from your passages with the following commands:
 + Play - `<<playSound $sound>>`
   + Will play the chosen audio file. Must be used before any command except `loopSound`
 + Loop - `<<loopSound $sound>>`

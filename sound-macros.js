@@ -53,6 +53,9 @@ macros["increaseVolume"] = {
     audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
 
     if(audioElement.volume < 0.99) {
+      /*
+       * HERE IS WHERE YOU CAN ADJUST THE VOLUME SETTINGS
+       */
       audioElement.volume += 0.1;
     } else {
       return false;
@@ -68,6 +71,9 @@ macros["decreaseVolume"] = {
     audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
 
     if(audioElement.volume > 0.1) {
+      /*
+       * HERE IS WHERE YOU CAN ADJUST THE VOLUME SETTINGS
+       */
       audioElement.volume -= 0.1;
     } else {
       return false;
@@ -82,6 +88,9 @@ macros["increasePlayback"] = {
     soundFile = eval(parser.fullArgs()).toString();
     audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
 
+    /*
+     * HERE IS WHERE YOU CAN ADJUST THE PLAYBACK RATES
+     */
     audioElement.playbackRate += 0.1;
   }
 }
@@ -93,6 +102,9 @@ macros["decreasePlayback"] = {
     soundFile = eval(parser.fullArgs()).toString();
     audioElement = document.querySelectorAll("audio[src='"+soundFile+"']")[0];
 
+    /*
+     * HERE IS WHERE YOU CAN ADJUST THE PLAYBACK RATES
+     */
     audioElement.playbackRate -= 0.1;
   }
 }
