@@ -1,3 +1,23 @@
+macros["createSound"] = {
+  handler: function (bodyElement, macroName, params, parser) {
+    var soundFile, audioElement;
+
+    soundFile = eval(parser.fullArgs()).toString();
+
+    audioElement = document.createElement('audio');
+    audioElement.setAttribute('class', 'audio');
+    audioElement.setAttribute('src', soundFile);
+    audioElement.setAttribute('preload', true);
+
+    /*
+     * HERE IS WHERE YOU CAN ADJUST THE STARTING VOLUME
+     */
+    audioElement.volume = 1;
+
+    document.body.appendChild(audioElement);
+  }
+}
+
 macros["playSound"] = {
   handler: function (bodyElement, macroName, params, parser) {
     var soundFile, audioElement;

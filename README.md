@@ -2,6 +2,7 @@
 A small series of basic sound macros for use in Twine. Mostly ones that I've needed myself but I'll be adding more as I need them/people ask for.
 
 ## What's in this file?
++ Create
 + Play
 + Loop
 + Pause
@@ -22,6 +23,8 @@ Cool! Here are some quick steps to take for getting this going in your Twine gam
 
 ## Documentation
 You can call any of the macros from your passages with the following commands:
++ Create - `<<createSound $sound>>`
+  + Will create an `<audio>` element but will not play it. Useful for preloading sounds for later use.
 + Play - `<<playSound $sound>>`
   + Will play the chosen audio file. Must be used before any command except `loopSound`
 + Loop - `<<loopSound $sound>>`
